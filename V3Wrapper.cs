@@ -14,8 +14,8 @@ public class V3Wrapper
                 ConnectionMode = Microsoft.Azure.Cosmos.ConnectionMode.Direct,
                 RequestTimeout = new TimeSpan(1, 0, 0),
                 GatewayModeMaxConnectionLimit = 1000,
-                MaxRetryAttemptsOnRateLimitedRequests = 10,
-                MaxRetryWaitTimeOnRateLimitedRequests = TimeSpan.FromSeconds(60),
+                MaxRetryAttemptsOnRateLimitedRequests = 1000,
+                MaxRetryWaitTimeOnRateLimitedRequests = TimeSpan.FromHours(1),
                 AllowBulkExecution = true
             }
         );
