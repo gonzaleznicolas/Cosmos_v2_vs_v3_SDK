@@ -15,8 +15,8 @@ public class Program
         var containerName = "Container_v2v3";
         var accountEndpoint = "https://localhost:8081/";
         var accountKey = "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==";
-        var numPartitionKeys = 50;
-        var docsPerPartitionKey = 50;
+        var numPartitionKeys = 7500;
+        var docsPerPartitionKey = 10;
         var numDocuments = numPartitionKeys * docsPerPartitionKey;
 
         var v2Wrapper = new V2Wrapper(accountEndpoint, accountKey);

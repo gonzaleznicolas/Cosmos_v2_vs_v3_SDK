@@ -29,7 +29,7 @@ public class V3Wrapper
                 Id = containerName,
                 PartitionKeyPath = "/PartitionKey"
             };
-        ThroughputProperties throughputProperties = ThroughputProperties.CreateManualThroughput(400);
+        ThroughputProperties throughputProperties = ThroughputProperties.CreateManualThroughput(15000);
         await database.CreateContainerIfNotExistsAsync(containerProperties, throughputProperties);
     }
 
