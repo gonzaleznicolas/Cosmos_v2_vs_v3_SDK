@@ -36,11 +36,11 @@ public class V3Wrapper
     public async Task UpsertDocuments(List<Document> documents, string databaseName, string containerName)
     {
         var container = cosmosClient.GetContainer(databaseName, containerName);
-        var tasks = new ConcurrentBag<Task>();
-        Parallel.ForEach(documents, (document) =>
+        var tasks = new List<Task>();
+        foreach (var document in documents)
         {
             tasks.Add(container.UpsertItemAsync(document, new PartitionKey(document.PartitionKey)));
-        });
+        }
 
         await Task.WhenAll(tasks);
     }
